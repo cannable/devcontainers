@@ -1,0 +1,13 @@
+{
+  "image": "cannable/devcontainer-ol9-ansible:latest",
+  "containerEnv": {
+    "EDITOR": "/usr/bin/vim",
+    "VISUAL": "/usr/bin/vim",
+    "VAULT_ADDR": "${localEnv:VAULT_ADDR}",
+    "VAULT_TOKEN": "${localEnv:VAULT_TOKEN}"
+  },
+  "mounts": [
+    { "source": "dc-ansible-user-home", "target": "/home/user/", "type": "volume" },
+    { "source": "/home/user/.ssh", "target": "/home/user/.ssh", "type": "bind" }
+  ]
+}
